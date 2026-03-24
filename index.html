@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido Irrecusável</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #191919;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: blue;
+      font-weight: 600;
+    }
+
+    .box {
+      font-size: 20px;
+      color: white;
+      height: 250px;
+      width: 350px;
+      border-radius: 10px;
+      background: #191919;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-around;
+      width: 150px;
+      margin-top: 20px;
+    }
+
+    button {
+      height: 35px;
+      width: 60px;
+      background: white;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <p>Cineminha sexta?</p>
+
+    <div class="buttons-container">
+      <button>
+        <a href="paginadosim.html">Sim</a>
+      </button>
+
+      <button id="no">Não</button>
+    </div>
+  </div>
+
+  <script>
+    let button = document.getElementById('no');
+
+    button.addEventListener('mouseover', function () {
+      let height = window.innerHeight - button.offsetHeight;
+      let width = window.innerWidth - button.offsetWidth;
+
+      button.style.position = "absolute";
+      button.style.top = Math.random() * height + "px";
+      button.style.left = Math.random() * width + "px";
+    });
+  </script>
+
+</body>
+</html>
